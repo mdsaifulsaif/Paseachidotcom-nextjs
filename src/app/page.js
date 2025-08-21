@@ -5,7 +5,7 @@ import Banner from "./Components/Banner";
 
 export default function Home() {
   return (
-    <div>
+    <div data-theme="light" className="min-h-screen ">
       <Banner />;
     </div>
   );

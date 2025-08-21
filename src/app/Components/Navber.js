@@ -8,11 +8,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-100 dark:bg-gray-800 shadow">
+    <nav className="md:w-6xl mx-auto bg-gray-100 dark:bg-gray-800 shadow">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Brand Logo */}
-        <Link href="/" className="text-2xl font-bold text-blue-600">
-          MyShop
+        <Link href="/" className="text-2xl font-bold text-[#129990] ">
+          Mega Mart
         </Link>
 
         {/* Desktop Menu */}
@@ -25,7 +25,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/login"
-            className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="px-3 py-1 bg-[#129990]  text-white rounded hover:bg-[#129990] "
           >
             Login
           </Link>

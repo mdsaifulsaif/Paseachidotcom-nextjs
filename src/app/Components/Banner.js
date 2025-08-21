@@ -1,62 +1,89 @@
 "use client";
-
+import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const slides = [
   {
     id: 1,
-    title: "Welcome to MyShop",
-    desc: "Discover the best products at unbeatable prices.",
-    btnText: "Explore Products",
-    img: "https://source.unsplash.com/1600x600/?shopping,store",
+    title: "Best Deal Online on smart watches",
+    subtitle: "SMART WEARABLE.",
+    offer: "UP TO 80% OFF",
+    img: "https://i.ibb.co.com/qMyrWVfK/image-2.png",
   },
   {
     id: 2,
-    title: "Exclusive Deals",
-    desc: "Get huge discounts on top products every day!",
-    btnText: "Shop Now",
-    img: "https://source.unsplash.com/1600x600/?ecommerce,discount",
+    title: "Get the latest fashion trends",
+    subtitle: "NEW COLLECTIONS.",
+    offer: "UP TO 60% OFF",
+    img: "https://i.ibb.co.com/qMyrWVfK/image-2.png",
   },
   {
     id: 3,
-    title: "Fast Delivery",
-    desc: "We deliver products at lightning speed, right to your door.",
-    btnText: "Order Today",
-    img: "https://source.unsplash.com/1600x600/?delivery,shipping",
+    title: "Upgrade your home appliances",
+    subtitle: "SMART HOME DEALS.",
+    offer: "UP TO 50% OFF",
+    img: "https://i.ibb.co.com/qMyrWVfK/image-2.png",
   },
 ];
 
 export default function Banner() {
   return (
-    <section className="relative">
+    <section className="md:w-6xl mx-auto bg-gray-50">
+      {/* Category Navigation */}
+      <div className="flex gap-4 overflow-x-auto px-6 py-3 text-sm font-medium border-b">
+        {[
+          "Groceries",
+          "Premium Fruits",
+          "Home & Kitchen",
+          "Fashion",
+          "Electronics",
+          "Beauty",
+          "Home Improvement",
+          "Sports, Toys & Luggage",
+        ].map((cat) => (
+          <button
+            key={cat}
+            className="px-3 py-1 rounded-full border border-gray-200 hover:bg-[#129990] hover:text-white transition"
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      {/* Slider */}
       <Carousel
-        showArrows={true}
         autoPlay
-        infiniteLoop
-        interval={3000}
+        infiniteLoop={false}
+        interval={4000}
         showThumbs={false}
         showStatus={false}
-        stopOnHover
+        showArrows={true}
       >
-        {slides.map((slide) => (
-          <div key={slide.id} className="relative bg-amber-200">
-            <img
-              src={slide.img}
-              alt={slide.title}
-              className="object-cover h-[70vh] w-full"
-            />
-            {/* Overlay Content */}
-            <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white px-4">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                {slide.title}
-              </h1>
-              <p className="text-lg md:text-xl mb-6">{slide.desc}</p>
-              <a
-                href="/products"
-                className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold shadow hover:bg-yellow-300 transition"
-              >
-                {slide.btnText}
-              </a>
+        {slides.map((s) => (
+          <div
+            key={s.id}
+            className="flex flex-col md:flex-row items-center justify-between px-8 py-12 bg-gradient-to-r from-gray-600 to-gray-900 text-white"
+          >
+            {/* Text Content */}
+            <div className="max-w-lg space-y-4">
+              <h4 className="text-lg">{s.title}</h4>
+              <h1 className="text-4xl md:text-5xl font-bold">{s.subtitle}</h1>
+              <p className="text-xl font-semibold">{s.offer}</p>
+              <button className="mt-4 px-6 py-3 bg-white text-[#129990] font-semibold rounded-lg shadow hover:bg-gray-100 transition">
+                Shop Now
+              </button>
+            </div>
+
+            {/* Image */}
+            <div className="mt-6 md:mt-0 md:w-1/2 flex justify-center">
+              <Image
+                width={268} // required
+                height={270}
+                src={s.img}
+                alt={s.subtitle}
+                className="max-h-[300px] object-contain rounded-lg shadow-lg border-4 border-white"
+              />
             </div>
           </div>
         ))}
