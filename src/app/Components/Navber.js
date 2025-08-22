@@ -8,8 +8,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="md:w-6xl mx-auto bg-gray-100 dark:bg-gray-800 shadow">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="   z-10 mb-5 w-full bg-gray-100 dark:bg-gray-800 shadow">
+      {/* <div className="h-5 w-full bg-green-50"></div> */}
+      <div className="max-w-6xl    mx-auto px-6 py-4 flex justify-between items-center">
         {/* Brand Logo */}
         <Link href="/" className="text-2xl font-bold text-[#129990] ">
           Mega Mart

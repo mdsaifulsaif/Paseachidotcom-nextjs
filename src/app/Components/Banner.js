@@ -29,7 +29,7 @@ const slides = [
 
 export default function Banner() {
   return (
-    <section className="md:w-6xl mx-auto bg-gray-50">
+    <section className="md:w-6xl  mx-auto bg-gray-50">
       {/* Category Navigation */}
       <div className="flex gap-4 overflow-x-auto px-6 py-3 text-sm font-medium border-b">
         {[

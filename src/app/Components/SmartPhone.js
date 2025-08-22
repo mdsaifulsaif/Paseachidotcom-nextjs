@@ -51,7 +51,7 @@ export const smartphones = [
 
 export default function Smartphone() {
   return (
-    <div className=" md:w-6xl  mx-auto mb-8 mt-20">
+    <div className=" md:w-6xl px-5   mx-auto mb-8 mt-20">
       <div className="flex flex-col justify-start items-start mb-4">
         <h2 className="text-2xl font-bold">
           Grab the best deal on{" "}
@@ -64,7 +64,7 @@ export default function Smartphone() {
         </a> */}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-5  space-x-4 overflow-x-auto pb-4">
+      <div className="grid grid-cols-1  md:grid-cols-5 justify-center  gap-5 overflow-x-auto pb-4">
         {smartphones.map((phone) => (
           <div
             key={phone.id}
